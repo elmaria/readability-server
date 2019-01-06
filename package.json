@@ -1,0 +1,23 @@
+{
+  "name": "readability-server",
+  "version": "1.0.0",
+  "description": "Expose Mozilla's readability over HTTP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmaria/readability-server.git"
+  },
+  "author": "elmaria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elmaria/readability-server/issues"
+  },
+  "homepage": "https://github.com/elmaria/readability-server#readme",
+  "dependencies": {
+    "jsdom": "^13.1.0",
+    "polka": "^0.5.1"
+  }
+}
