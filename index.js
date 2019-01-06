@@ -17,15 +17,22 @@ polka()
 		});
 
 		req.on("end", function () {
-			let data = JSON.parse(body);
+			try {
+				let data = JSON.parse(body);
 
-			let doc = new JSDOM(data.content, {
-				url: data.url,
-			});
-			let reader = new Readability(doc.window.document);
-			let article = reader.parse();
+				let doc = new JSDOM(data.content, {
+					url: data.url,
+				});
+				let reader = new Readability(doc.window.document);
+				let article = reader.parse();
 
-			res.end(JSON.stringify(article));
+				res.end(JSON.stringify(article));
+
+			} catch(e) {
+				res.statusCode = 400;
+				res.end("Bad Request");
+			}
+
 		});
 	})
 
